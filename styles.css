@@ -115,13 +115,17 @@ header{
 
     position:sticky;
 
-    top:0;
+    top:20px;
 
-    background:rgba(255,255,255,.95);
+    left:0;
 
-    backdrop-filter:blur(18px);
+    width:100%;
 
-    padding:18px 6%;
+    padding:0 6%;
+
+    z-index:99999;
+
+    pointer-events:none;
 
 }
 
@@ -130,23 +134,29 @@ header{
 
 nav{
 
-    display:flex;
+    position:relative;
 
-    align-items:center;
+    z-index:99999;
+
+    pointer-events:auto;
+
+    display:flex;
 
     justify-content:space-between;
 
-    background:rgba(255,255,255,.25);
+    align-items:center;
 
-    backdrop-filter:blur(20px);
+    padding:14px 28px;
 
-    border:1px solid rgba(255,255,255,.35);
+    background:rgba(255,255,255,.88);
 
-    border-radius:60px;
+    backdrop-filter:blur(18px);
 
-    padding:12px 28px;
+    -webkit-backdrop-filter:blur(18px);
 
-    box-shadow:var(--shadow);
+    border-radius:22px;
+
+    box-shadow:0 15px 45px rgba(0,0,0,.10);
 
 }
 
@@ -860,8 +870,6 @@ section p{
 
     position:relative;
 
-    z-index:2;
-
     color:#fff;
 
     margin-bottom:28px;
@@ -871,8 +879,6 @@ section p{
 .promise p{
 
     position:relative;
-
-    z-index:2;
 
     max-width:760px;
 
@@ -891,8 +897,6 @@ section p{
 .promise blockquote{
 
     position:relative;
-
-    z-index:2;
 
     margin-top:50px;
 
@@ -1259,8 +1263,6 @@ footer .socials a:hover{
 
     transition:var(--transition);
 
-    z-index:999;
-
 }
 
 .top:hover{
@@ -1466,6 +1468,9 @@ nav{
 section{
 
     padding:80px 25px;
+    position:relative;
+
+    z-index:1;
 
 }
 
