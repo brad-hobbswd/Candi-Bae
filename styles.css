@@ -113,16 +113,15 @@ ul{
 
 header{
 
-    position:fixed;
+    position:sticky;
 
     top:0;
-    left:0;
 
-    width:100%;
+    background:rgba(255,255,255,.95);
 
-    z-index:1000;
+    backdrop-filter:blur(18px);
 
-    padding:20px 7%;
+    padding:18px 6%;
 
 }
 
@@ -145,7 +144,7 @@ nav{
 
     border-radius:60px;
 
-    padding:18px 34px;
+    padding:12px 28px;
 
     box-shadow:var(--shadow);
 
@@ -161,6 +160,7 @@ nav{
     font-weight:600;
 
     color:var(--dark);
+    font-size:1.6rem;
 
 }
 
@@ -168,7 +168,7 @@ nav{
 
     font-family:"Great Vibes",cursive;
 
-    font-size:2.6rem;
+    font-size:2.2rem;
 
     color:var(--pink);
 
@@ -272,7 +272,7 @@ nav li a:hover{
 
 .hero{
 
-    padding:130px 6% 70px;
+    padding-top:40px;
 
     background:
     linear-gradient(
@@ -297,6 +297,14 @@ nav li a:hover{
 
     box-shadow:
     0 30px 80px rgba(0,0,0,.12);
+    
+    margin-bottom:90px;
+    
+      box-shadow:
+
+        0 35px 90px rgba(0,0,0,.18);
+    
+    
 
 }
 
@@ -396,7 +404,7 @@ nav li a:hover{
 
     justify-content:center;
 
-    gap:20px;
+    gap:30px;
 
     flex-wrap:wrap;
 
@@ -463,6 +471,7 @@ nav li a:hover{
     color:var(--pink);
 
     border:2px solid var(--pink);
+
 }
 
 .secondary:hover{
@@ -470,6 +479,7 @@ nav li a:hover{
     background:var(--pink);
 
     color:#fff;
+
 
 }
 
