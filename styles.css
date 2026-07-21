@@ -272,9 +272,14 @@ nav li a:hover{
 
 .hero{
 
-    padding:160px 8% 100px;
+    padding:130px 6% 70px;
 
-    background:#fff;
+    background:
+    linear-gradient(
+        180deg,
+        #ffffff,
+        #fff8fc
+    );
 
     text-align:center;
 
@@ -284,13 +289,14 @@ nav li a:hover{
 
     max-width:1200px;
 
-    margin:0 auto 70px;
+    margin:0 auto 60px;
 
-    border-radius:28px;
+    border-radius:30px;
 
     overflow:hidden;
 
-    box-shadow:0 25px 70px rgba(0,0,0,.12);
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.12);
 
 }
 
@@ -298,15 +304,53 @@ nav li a:hover{
 
     width:100%;
 
+    height:auto;
+
     display:block;
 
 }
 
-.hero-text{
+.hero-content{
 
     max-width:700px;
 
     margin:auto;
+
+}
+
+.hero-content h3{
+
+    color:var(--pink);
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+
+    font-size:.95rem;
+
+}
+
+.hero-content h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:3.5rem;
+
+    color:var(--dark);
+
+    margin-bottom:25px;
+
+}
+
+.hero-content p{
+
+    font-size:1.15rem;
+
+    color:#666;
+
+    margin-bottom:40px;
 
 }
 
@@ -414,25 +458,18 @@ nav li a:hover{
 
 .secondary{
 
-    display:inline-block;
+    background:#fff;
 
-    padding:16px 38px;
+    color:var(--pink);
 
-    border-radius:50px;
-
-    border:2px solid rgba(255,255,255,.8);
-
-    color:#fff;
-
-    transition:var(--transition);
-
+    border:2px solid var(--pink);
 }
 
 .secondary:hover{
 
-    background:#fff;
+    background:var(--pink);
 
-    color:var(--pink);
+    color:#fff;
 
 }
 
@@ -677,25 +714,7 @@ section p{
 
 /* Decorative Image Placeholder */
 
-.about::before{
 
-    content:"";
-
-    width:100%;
-    min-height:520px;
-
-    border-radius:35px;
-
-    background:
-    linear-gradient(
-    135deg,
-    rgba(255,95,168,.18),
-    rgba(182,149,255,.18),
-    rgba(207,239,255,.18));
-
-    box-shadow:var(--shadow);
-
-}
 
 /* Text */
 
@@ -1351,13 +1370,19 @@ nav{
 
     min-height:100vh;
 
-    padding:120px 30px 60px;
+    padding:110px 20px 50px;
 
 }
 
+.hero-banner{
+
+    margin-bottom:40px;
+    }
+    
+
 .hero-content h1{
 
-    font-size:2.7rem;
+    font-size:2.4rem;
 
 }
 
