@@ -5,24 +5,91 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* -----------------------------------
-       Smooth Scroll
-    ----------------------------------- */
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
+    if(menuToggle && navMenu){
+
+        menuToggle.addEventListener("click", () => {
+
+            navMenu.classList.toggle("active");
+            menuToggle.classList.toggle("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                navMenu.classList.contains("active")
+            );
+
+        });
+
+        document.querySelectorAll(".nav-menu a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navMenu.classList.remove("active");
+                menuToggle.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+
+            });
+
+        });
+
+        document.addEventListener("click", event => {
+
+            if(
+                !navMenu.contains(event.target) &&
+                !menuToggle.contains(event.target)
+            ){
+
+                navMenu.classList.remove("active");
+                menuToggle.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+
+            }
+
+        });
+
+        window.addEventListener("resize", () => {
+
+            if(window.innerWidth > 768){
+
+                navMenu.classList.remove("active");
+                menuToggle.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+
+            }
+
+        });
+
+    }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         anchor.addEventListener("click", function(e){
 
-            e.preventDefault();
+            const targetId = this.getAttribute("href");
 
-            const target = document.querySelector(this.getAttribute("href"));
+            if(!targetId || targetId === "#"){
+                return;
+            }
+
+            const target = document.querySelector(targetId);
 
             if(target){
 
-                target.scrollIntoView({
+                e.preventDefault();
 
+                const header = document.querySelector("header");
+                const headerHeight = header ? header.offsetHeight + 30 : 0;
+
+                const targetPosition =
+                    target.getBoundingClientRect().top +
+                    window.pageYOffset -
+                    headerHeight;
+
+                window.scrollTo({
+                    top:targetPosition,
                     behavior:"smooth"
-
                 });
 
             }
@@ -31,50 +98,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    /* -----------------------------------
-       Sticky Navigation
-    ----------------------------------- */
-
     const nav = document.querySelector("nav");
 
-    window.addEventListener("scroll", () => {
+    if(nav){
 
-        if(window.scrollY > 60){
+        window.addEventListener("scroll", () => {
 
-            nav.style.background = "rgba(255,255,255,.95)";
-            nav.style.backdropFilter = "blur(25px)";
-            nav.style.boxShadow = "0 12px 35px rgba(0,0,0,.15)";
-            nav.style.padding = "14px 30px";
+            if(window.scrollY > 60){
 
-        } else {
+                nav.style.background = "rgba(255,255,255,.95)";
+                nav.style.backdropFilter = "blur(25px)";
+                nav.style.webkitBackdropFilter = "blur(25px)";
+                nav.style.boxShadow = "0 12px 35px rgba(0,0,0,.15)";
 
-            nav.style.background = "rgba(255,255,255,.25)";
-            nav.style.backdropFilter = "blur(20px)";
-            nav.style.boxShadow = "0 15px 40px rgba(0,0,0,.12)";
-            nav.style.padding = "18px 34px";
+            } else {
 
-        }
+                nav.style.background = "rgba(255,255,255,.72)";
+                nav.style.backdropFilter = "blur(24px)";
+                nav.style.webkitBackdropFilter = "blur(24px)";
+                nav.style.boxShadow = "0 18px 55px rgba(0,0,0,.12)";
 
-    });
+            }
 
-    /* -----------------------------------
-       Scroll Reveal
-    ----------------------------------- */
+        });
+
+    }
 
     const revealElements = document.querySelectorAll("section,.card");
 
+    revealElements.forEach(el => {
+        el.classList.add("reveal");
+    });
+
     const reveal = () => {
 
-        revealElements.forEach(el=>{
+        revealElements.forEach(el => {
 
             const top = el.getBoundingClientRect().top;
-
             const visible = window.innerHeight - 120;
 
             if(top < visible){
-
                 el.classList.add("active");
-
             }
 
         });
@@ -82,83 +146,58 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     reveal();
-
     window.addEventListener("scroll", reveal);
-
-    revealElements.forEach(el=>{
-
-        el.classList.add("reveal");
-
-    });
-
-    /* -----------------------------------
-       Back To Top Button
-    ----------------------------------- */
 
     const topButton = document.createElement("button");
 
     topButton.className = "top";
-
     topButton.innerHTML = "↑";
+    topButton.setAttribute("aria-label", "Back to top");
 
     document.body.appendChild(topButton);
-
     topButton.style.display = "none";
 
-    window.addEventListener("scroll",()=>{
+    window.addEventListener("scroll", () => {
 
-        if(window.scrollY > 500){
-
-            topButton.style.display="block";
-
-        }else{
-
-            topButton.style.display="none";
-
-        }
+        topButton.style.display =
+            window.scrollY > 500 ? "block" : "none";
 
     });
 
-    topButton.addEventListener("click",()=>{
+    topButton.addEventListener("click", () => {
 
         window.scrollTo({
-
             top:0,
-
             behavior:"smooth"
-
         });
 
     });
-
-    /* -----------------------------------
-       Floating Sparkles
-    ----------------------------------- */
 
     const hero = document.querySelector(".hero");
 
     function sparkle(){
 
+        if(!hero){
+            return;
+        }
+
         const star = document.createElement("span");
 
         star.className = "sparkle";
-
-        star.style.left = Math.random() * window.innerWidth + "px";
-
-        star.style.animationDuration = (5 + Math.random() * 6) + "s";
-
+        star.style.left = Math.random() * 100 + "%";
+        star.style.bottom = "0";
+        star.style.animationDuration =
+            (5 + Math.random() * 6) + "s";
         star.style.opacity = Math.random();
 
         hero.appendChild(star);
 
-        setTimeout(()=>{
-
+        setTimeout(() => {
             star.remove();
-
-        },10000);
+        }, 11000);
 
     }
 
-    setInterval(sparkle,500);
+    setInterval(sparkle, 700);
 
 });
