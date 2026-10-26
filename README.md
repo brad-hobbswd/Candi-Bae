@@ -1,91 +1,27 @@
-# 💖 Candi Bae Cosmetics
+# Candi Bae Cosmetics | Be Beautiful. Be Sweet. Be a Candi Bae.
 
-> **Be Beautiful. Be Sweet. Be a Candi Bae.**
+A personal brand or creative project website. This README documents the existing pages and assets without presuming any unverified business offerings.
 
-**🌐 Live Website**
+## Live Website
+https://brad-hobbswd.github.io/Candi-Bae/
 
-Visit the live site:
+## Project Overview
+A personal brand or creative project website. This README documents the existing pages and assets without presuming any unverified business offerings.
 
-**https://brad-hobbswd.github.io/Candi-Bae**
+## Pages in This Repository
+- Homepage and supporting project files.
 
----
+## Current Scope
+This update documents the current repository contents and search engine files. No visual redesign is included in this pass.
 
-## About
+## Technology
+Static website published through GitHub Pages using its existing HTML, styles, scripts, and assets.
 
-Candi Bae Cosmetics is a modern beauty brand dedicated to creating luxurious, clean, and confidence-inspiring cosmetics. Every product is designed to help you embrace your unique beauty with elegance, quality, and self-expression.
+## Copyright and Permissions
+Copyright © 2026 Bradley Hobbs. All rights reserved.
 
----
+Original writing, devotional or teaching materials, website copy, visual design, graphics, and code are protected by copyright. Written permission is required before reuse, republication, redistribution, modification, or commercial use, except where applicable law permits otherwise. Third-party materials remain subject to their owners' terms.
 
-## Features
-
-- Responsive landing page
-- Luxury modern design
-- Animated hero banner
-- Glassmorphism navigation
-- Smooth scrolling
-- Mobile friendly
-- SEO optimized
-- HTML5
-- CSS3
-- Vanilla JavaScript
-
----
-
-## Technologies
-
-- HTML5
-- CSS3
-- JavaScript
-- Google Fonts
-
----
-
-## Project Structure
-
-```text
-Candi-Bae/
-│
-├── index.html
-├── styles.css
-├── script.js
-├── README.md
-│
-├── images/
-│   ├── banner.jpg
-│   ├── logo.png
-│   └── products/
-│
-└── favicon.ico
-```
-
----
-
-## Brand Colors
-
-- Bubble Pink
-- Lavender
-- Baby Blue
-- White
-- Charcoal
-
----
-
-## Motto
-
-**Be Beautiful. Be Sweet. Be a Candi Bae.**
-
----
-
-## Author
-
-Designed and developed by **Bradley Hobbs**
-
-GitHub:
-https://github.com/brad-hobbswd
-
-Website:
-https://brad-hobbswd.github.io/Candi-Bae
-
----
-
-© 2026 Candi Bae Cosmetics. All Rights Reserved.
+## Search Engine Files
+- [Sitemap](sitemap.xml)
+- [robots.txt](robots.txt)
